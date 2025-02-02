@@ -1,0 +1,41 @@
+#login {
+  position: absolute;
+  width: 24%;
+  top: 24%;
+  max-height: 100%;
+  left: 3.6%;
+  z-index: 50;
+}
+#register {
+  position: absolute;
+  width: 24%;
+  top: 21%;
+  max-height: 100%;
+  right: 4%;
+  z-index: 50;
+}
+#link {
+  z-index: 10;
+}
+#logo {
+  position: absolute;
+  top: 30vh;
+  left: 50%;
+  translate: -50%;
+  width: 38%;
+  height: 38%;
+  z-index: 100;
+  animation: logo 10s ease-in-out infinite;
+}
+
+@keyframes logo {
+  0% {
+    transform: translateY(0%);
+  }
+  50% {
+    transform: translateY(10%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}

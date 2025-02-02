@@ -1,0 +1,66 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.bgsection {
+  z-index: 0;
+  position: absolute;
+  top: 0vh;
+  right: 0vh;
+  width: 19.5%;
+  height: 100vh;
+  display: flex;
+  border-top-left-radius: 40px;
+  border-bottom-left-radius: 40px;
+  flex-direction: column;
+  overflow: hidden;
+  background: rgb(149, 149, 149);
+  background: linear-gradient(300deg, rgba(149, 149, 149, 1) 1%, rgba(255, 255, 255, 1) 100%);
+}
+section .row {
+  top: -50%;
+  position: relative;
+  width: 100%;
+  display: flex;
+  padding: 20px 0;
+  white-space: nowrap;
+  font-size: 75px;
+  transform: rotate(-25deg);
+}
+.i {
+  color: rgba(0, 0, 0, 0.05);
+  transition: 1s;
+  padding: 0 22px;
+  user-select: none;
+  cursor: default;
+}
+.i:hover {
+  transition: 0s;
+  color: rgb(130, 130, 130);
+}
+section .row:nth-child(odd) div {
+  animation: animate 100s linear infinite;
+  animation-delay: -50s;
+}
+
+@keyframes animate {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+section .row:nth-child(even) div {
+  animation: animate2 100s linear infinite;
+}
+@keyframes animate2 {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
