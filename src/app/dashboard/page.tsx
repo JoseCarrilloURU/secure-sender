@@ -54,6 +54,9 @@ const items = [
 ];
 
 export default function Dashboard() {
+  const handleLogout = () => {
+    try
+  }
   return (
     <div>
       <div id="card"></div>
@@ -65,7 +68,7 @@ export default function Dashboard() {
       <div className="w-full bg-white rounded-b-3xl absolute top-0 h-20 z-50">
         <Image src={logoimg} alt="logo" id="logo" />
         <h1 id="user">¡Bienvenido, odiarj!</h1>
-        <Button id="logout">
+        <Button id="logout" onClick={handleLogout}>
           {" "}
           <MdLogout />
           Cerrar Sesión{" "}

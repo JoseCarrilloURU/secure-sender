@@ -17,11 +17,18 @@ import {
 import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { useRouter } from 'next/navigation';
+import { useEffect } from "react";
 
 export default function Home() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
+  const router = useRouter();
+
+  useEffect(()=>{
+
+  }, []);
 
   const handleRegister = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -41,7 +48,7 @@ export default function Home() {
       const data = await response.json();
       if(response.ok){
         console.log('Usuario registrado', data);
-
+        
       }
     } catch (error) {
       console.log('Error al registrarse', error);
@@ -67,8 +74,8 @@ export default function Home() {
       const data = await response.json();
       console.log(data);
       if(response.ok){
-        
         console.log('Usuario logueado', data);
+        router.push('/dashboard');
       }
     } catch (error) {
       console.log('Error al iniciar sesión', error  );
