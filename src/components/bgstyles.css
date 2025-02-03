@@ -10,8 +10,6 @@
   left: 0vh;
   width: 50%;
   height: 100vh;
-  border-top-right-radius: 25px;
-  border-bottom-right-radius: 25px;
   display: flex;
   flex-direction: column;
   overflow: hidden;

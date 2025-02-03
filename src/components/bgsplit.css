@@ -11,8 +11,6 @@
   width: 49.5%;
   height: 100vh;
   display: flex;
-  border-top-left-radius: 25px;
-  border-bottom-left-radius: 25px;
   flex-direction: column;
   overflow: hidden;
   background: rgb(0, 0, 0);
