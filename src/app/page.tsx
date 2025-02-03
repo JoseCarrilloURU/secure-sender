@@ -82,9 +82,12 @@ export default function Home() {
       <Image src={logoimg} alt="logo" id="logo" />
 
       <div id="login">
-        <Card className="shadow-none rounded-3xl">
+        <Card id="logincard">
           <CardHeader>
-            <CardTitle className="text-3xl text-center">Inicio de Sesión</CardTitle>
+            <CardTitle className="text-3xl text-center">
+              {" "}
+              Inicio de Sesión{" "}
+            </CardTitle>
             <CardDescription className="text-center">
               Ingresa tus credenciales para entrar en tu cuenta.
             </CardDescription>
@@ -128,7 +131,9 @@ export default function Home() {
       <div id="register">
         <Card className="shadow-none rounded-3xl border-none">
           <CardHeader>
-            <CardTitle className="text-3xl text-center">Registro</CardTitle>
+            <CardTitle className="text-3xl text-center font-bold">
+              Registro
+            </CardTitle>
             <CardDescription className="text-center">
               Introduce tus datos para crear tu nueva cuenta.
             </CardDescription>
