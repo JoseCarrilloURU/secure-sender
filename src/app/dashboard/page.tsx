@@ -25,8 +25,8 @@ import { IoSend } from "react-icons/io5";
 const items = [
   {
     id: 1,
-    name: "Licitacion 1",
-    description: "Descripcion de la licitacion 1",
+    name: "Mi primera licitacion",
+    description: "El inicio de todas las licitaciones en este sistema",
     date: "2022-12-12",
     status: "Activa",
   },
@@ -51,17 +51,46 @@ const items = [
     date: "2025-12-12",
     status: "Pendiente",
   },
+  {
+    id: 5,
+    name: "Licitacion 5",
+    description: "Descripcion de la licitacion 5",
+    date: "2026-12-12",
+    status: "Pendiente",
+  },
+  {
+    id: 6,
+    name: "Licitacion 6",
+    description: "Descripcion de la licitacion 6",
+    date: "2027-12-12",
+    status: "Pendiente",
+  },
+  {
+    id: 7,
+    name: "Licitacion 7",
+    description: "Descripcion de la licitacion 7",
+    date: "2028-12-12",
+    status: "Pendiente",
+  },
+  {
+    id: 8,
+    name: "Licitacion 8",
+    description: "Descripcion de la licitacion 8",
+    date: "2029-12-12",
+    status: "Pendiente",
+  },
+  {
+    id: 9,
+    name: "Licitacion 9",
+    description: "Descripcion de la licitacion 9",
+    date: "2030-12-12",
+    status: "Pendiente",
+  },
 ];
 
 export default function Dashboard() {
   return (
     <div>
-      <div id="card"></div>
-      <ul>
-        {items.map((item) => (
-          <li key={item.id}>{item.name}</li>
-        ))}
-      </ul>
       <div className="w-full bg-white rounded-b-3xl absolute top-0 h-20 z-50">
         <Image src={logoimg} alt="logo" id="logo" />
         <h1 id="user">¡Bienvenido, odiarj!</h1>
@@ -127,6 +156,16 @@ export default function Dashboard() {
             </DialogFooter>
           </DialogContent>
         </Dialog>
+      </div>
+      <div className="grid grid-cols-3 gap-8 mt-6">
+        {items.map((item) => (
+          <div key={item.id} id="card" className="p-5 border">
+            <h1 id="cardname">{item.name}</h1>
+            <p id="carddesc">{item.description}</p>
+            <p id="carddate">{item.date}</p>
+            <p id="cardstatus">{item.status}</p>
+          </div>
+        ))}
       </div>
       <AppBG />
       <h1 id="title">Tus Licitaciones</h1>
