@@ -8,9 +8,10 @@
   position: absolute;
   top: 0vh;
   left: 0vh;
-  width: 100%;
-  border-radius: 40px;
+  width: 50%;
   height: 100vh;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -22,7 +23,12 @@
     rgb(0, 42, 97) 100%
   );
 }
+.stripcontainer {
+  transform: rotate(15deg);
+}
 .row {
+  top: -170%;
+  left: -5%;
   width: fit-content;
   display: flex;
   flex-direction: row;
@@ -47,21 +53,26 @@ section .row:nth-child(odd) div {
   animation-delay: -50s;
 }
 
+.stripcontainer:nth-child(odd) .row {
+  animation: animate 50s linear infinite;
+}
+
+.stripcontainer:nth-child(even) .row {
+  animation: animate2 50s linear infinite;
+}
+
 @keyframes animate {
   0% {
     transform: translateX(0%);
   }
   100% {
-    transform: translateX(-100%);
+    transform: translateX(-50%);
   }
 }
 
-section .row:nth-child(even) div {
-  animation: animate2 100s linear infinite;
-}
 @keyframes animate2 {
   0% {
-    transform: translateX(-100%);
+    transform: translateX(-50%);
   }
   100% {
     transform: translateX(0%);

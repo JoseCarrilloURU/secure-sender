@@ -1,6 +1,7 @@
 import Image from "next/image";
 import "@/app/homestyles.css";
 import IconsBG from "@/components/IconsBG";
+import SplitBG from "@/components/SplitBG";
 import logoimg from "@/assets/logo.png";
 import { Button } from "@/components/ui/button";
 import {
@@ -19,6 +20,7 @@ export default function Home() {
     <div>
       <div className=" w-full h-full bg-black absolute" />
       <IconsBG />
+      <SplitBG />
       <Image src={logoimg} alt="logo" id="logo" />
 
       <div id="login">
@@ -73,12 +75,10 @@ export default function Home() {
       </div>
 
       <div id="register">
-        <Card className="shadow-none rounded-3xl border-none bg-black">
+        <Card className="shadow-none rounded-3xl border-none">
           <CardHeader>
-            <CardTitle className="text-3xl text-center text-white">
-              Registro
-            </CardTitle>
-            <CardDescription className="text-center text-white">
+            <CardTitle className="text-3xl text-center">Registro</CardTitle>
+            <CardDescription className="text-center">
               Introduce tus datos para crear tu nueva cuenta.
             </CardDescription>
           </CardHeader>
@@ -86,7 +86,7 @@ export default function Home() {
             <div className="grid gap-4">
               <form>
                 <div className="mt-4 grid gap-2">
-                  <Label className="text-white">Correo Electrónico</Label>
+                  <Label className="">Correo Electrónico</Label>
                   <Input
                     v-model="email"
                     id="email"
@@ -96,7 +96,7 @@ export default function Home() {
                   />
                 </div>
                 <div className="mt-[6%] grid gap-2">
-                  <Label className="text-white">Nombre de Usuario</Label>
+                  <Label className="">Nombre de Usuario</Label>
                   <Input
                     v-model="email"
                     id="email"
@@ -107,7 +107,7 @@ export default function Home() {
                 </div>
                 <div className="grid gap-2">
                   <div className="flex items-center">
-                    <Label className="mt-[6%] text-white">Contraseña</Label>
+                    <Label className="mt-[6%] ">Contraseña</Label>
                     {/* <router-link
                   to="/ForgotPass"
                   className="ml-auto inline-block text-sm underline mt-[4%]"
@@ -123,10 +123,7 @@ export default function Home() {
                     required
                   />
                 </div>
-                <Button
-                  type="submit"
-                  className="mt-10 w-full bg-white text-black"
-                >
+                <Button type="submit" className="mt-10 w-full">
                   Crear Cuenta
                 </Button>
               </form>

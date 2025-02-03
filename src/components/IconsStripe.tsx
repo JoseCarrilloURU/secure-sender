@@ -31,7 +31,7 @@ const IconsStripe = () => {
   const size = 70;
 
   return (
-    <div>
+    <div className="stripcontainer">
       <div className="row">
         <FaCloud className="i" size={size} />
         <FaFilePdf className="i" size={size} />
