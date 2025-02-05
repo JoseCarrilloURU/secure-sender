@@ -70,6 +70,7 @@ export default function Home() {
           username,
           password,
         }),
+        credentials: 'include',
       })
       const data = await response.json();
       console.log(data);
@@ -91,7 +92,7 @@ export default function Home() {
       <div id="login">
         <Card id="logincard">
           <CardHeader>
-            <CardTitle className="text-3xl text-center">
+            <CardTitle className="text-3xl text-center font-bold">
               {" "}
               Inicio de Sesión{" "}
             </CardTitle>
