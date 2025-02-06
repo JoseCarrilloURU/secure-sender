@@ -86,18 +86,25 @@ const items = [
     date: "2030-12-12",
     status: "Pendiente",
   },
+  {
+    id: 10,
+    name: "Licitacion 10",
+    description:
+      "Descripcion de la licitacion 10, la ultima de las licitaciones que se haran en esta plataforma tan querida nuestra",
+    date: "2031-12-12",
+    status: "Pendiente",
+  },
 ];
 
 export default function Dashboard() {
-  const handleLogout = () => {
-    try
-  }
+  const handleLogout = () => {};
   return (
     <div>
+      <AppBG />
       <div className="w-full bg-white rounded-b-3xl absolute top-0 h-20 z-50">
         <Image src={logoimg} alt="logo" id="logo" />
         <h1 id="user">¡Bienvenido, odiarj!</h1>
-        <Button id="logout" onClick={handleLogout}>
+        <Button id="logout">
           {" "}
           <MdLogout />
           Cerrar Sesión{" "}
@@ -160,7 +167,7 @@ export default function Dashboard() {
           </DialogContent>
         </Dialog>
       </div>
-      <div className="grid grid-cols-3 gap-8 mt-6">
+      <div className="grid grid-cols-3 gap-8 mt-6 pb-16 mb-16">
         {items.map((item) => (
           <div key={item.id} id="card" className="p-5 border">
             <h1 id="cardname">{item.name}</h1>
@@ -170,7 +177,6 @@ export default function Dashboard() {
           </div>
         ))}
       </div>
-      <AppBG />
       <h1 id="title">Tus Licitaciones</h1>
     </div>
   );
