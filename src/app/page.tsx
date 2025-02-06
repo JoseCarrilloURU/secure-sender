@@ -70,6 +70,7 @@ export default function Home() {
           username,
           password,
         }),
+        credentials: 'include',
       })
       const data = await response.json();
       console.log(data);

@@ -1,7 +1,9 @@
+"use client"
+
 import Image from "next/image";
 import "@/app/dashboard/appstyles.css";
 import AppBG from "@/components/AppBG";
-import React from "react";
+import React, { useCallback } from "react";
 import logoimg from "@/assets/logo.png";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
@@ -19,7 +21,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { MdLogout } from "react-icons/md";
 import { FiPlusCircle } from "react-icons/fi";
-import { IoIosSend } from "react-icons/io";
+// import { IoIosSend } from "react-icons/io";
 import { IoSend } from "react-icons/io5";
 
 const items = [
@@ -86,29 +88,24 @@ const items = [
     date: "2030-12-12",
     status: "Pendiente",
   },
-  {
-    id: 10,
-    name: "Licitacion 10",
-    description:
-      "Descripcion de la licitacion 10, la ultima de las licitaciones que se haran en esta plataforma tan querida nuestra",
-    date: "2031-12-12",
-    status: "Pendiente",
-  },
 ];
 
 export default function Dashboard() {
-  const handleLogout = () => {};
+  const handleLogout = () => {
+    try
+  }
   return (
     <div>
       <AppBG />
       <div className="w-full bg-white rounded-b-3xl absolute top-0 h-20 z-50">
         <Image src={logoimg} alt="logo" id="logo" />
         <h1 id="user">¡Bienvenido, odiarj!</h1>
-        <Button id="logout">
+        <Button id="logout" onClick={handleLogout}>
           {" "}
           <MdLogout />
           Cerrar Sesión{" "}
         </Button>
+        <form onSubmit={handleSendApplication}>
         <Dialog>
           <DialogTrigger asChild>
             <Button id="new" className=" bg-blue-900 hover:bg-blue-700">
@@ -127,6 +124,7 @@ export default function Dashboard() {
               </DialogDescription>
             </DialogHeader>
             <div className="grid gap-4 py-4">
+              <form action=""></form>
               <div className="grid grid-cols-4 items-center gap-4">
                 <Label htmlFor="name" className="text-right">
                   Nombre
@@ -135,6 +133,8 @@ export default function Dashboard() {
                   id="name"
                   defaultValue="Nueva Licitación"
                   className="col-span-3"
+                  value={application.name}
+                  onChange={(e) => setApplication({ ...application, name: e.target.value })}
                 />
               </div>
               <div className="grid grid-cols-4 items-center gap-4">
@@ -145,20 +145,32 @@ export default function Dashboard() {
                   id="username"
                   defaultValue="Descripción de la Licitación"
                   className="col-span-3"
+                  value={application.description}
+                  onChange={(e) => setApplication({ ...application, description: e.target.value })}
                 />
               </div>
               <Label htmlFor="username" className="">
-                Archivo a Encriptar
+                Archivo a enviar
               </Label>
-              <Input className="" type="file"></Input>
+              <Input 
+              className="" 
+              type="file"
+              onChange={handleFileChange}
+              name="file"
+              />
               <Label htmlFor="username" className="">
                 Llave AES
               </Label>
-              <Input className="" type="file"></Input>
+              <Input 
+              className="" 
+              type="file"
+              onChange={handleKeyChange}
+              name="AES_key"
+              />
             </div>
             <DialogFooter>
               <DialogClose asChild>
-                <Button type="submit" className="text-md -mt-1">
+                <Button type="submit" className="text-md -mt-1" onClick={handleSendApplication}>
                   <IoSend />
                   Enviar
                 </Button>
@@ -166,13 +178,14 @@ export default function Dashboard() {
             </DialogFooter>
           </DialogContent>
         </Dialog>
+        </form>
       </div>
-      <div className="grid grid-cols-3 gap-8 mt-6 pb-16 mb-16">
+      <div className="grid grid-cols-3 gap-8 mt-6">
         {items.map((item) => (
           <div key={item.id} id="card" className="p-5 border">
             <h1 id="cardname">{item.name}</h1>
             <p id="carddesc">{item.description}</p>
-            <p id="carddate">{item.date}</p>
+            <p id="carddate">{new Date(item.date).toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
             <p id="cardstatus">{item.status}</p>
           </div>
         ))}
