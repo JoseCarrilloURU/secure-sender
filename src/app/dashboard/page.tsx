@@ -236,7 +236,7 @@ export default function Dashboard() {
                 />
               </div>
               <Label htmlFor="username" className="">
-                Archivo a Encriptar
+                Archivo a enviar
               </Label>
               <Input 
               className="" 

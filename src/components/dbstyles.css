@@ -5,7 +5,7 @@
 }
 .bgsection {
   z-index: 0;
-  position: absolute;
+  position: fixed;
   top: 0vh;
   left: 0vh;
   width: 100%;
